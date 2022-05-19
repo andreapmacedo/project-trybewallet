@@ -12,6 +12,7 @@ const App = () => (
     <Route exact path="/carteira" component={ Wallet } />
     {/* <Redirect path="*" to="/" /> */}
   </Switch>
+
 );
 
 export default App;
