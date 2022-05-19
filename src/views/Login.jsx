@@ -1,9 +1,6 @@
 import React from 'react';
-import propTypes from 'prop-types';
-import { connect } from 'react-redux';
 // import "./Login.css"
 import Loading from '../components/Loading';
-import { addEmail } from '../actions';
 
 class Login extends React.Component {
   constructor() {
@@ -37,13 +34,8 @@ class Login extends React.Component {
     if (name === 'password') this.validitypassword(value);
   }
 
-  userLogin = (event) => {
-    // const { history } = this.props;
-    const { dispatch, history } = this.props;
-    const { email } = this.state;
-    event.preventDefault();
-    dispatch(addEmail(email));
-    history.push('/carteira');
+  userLogin = () => {
+    console.log('1343');
   }
 
   render() {
@@ -79,7 +71,6 @@ class Login extends React.Component {
                     // disabled={ (password.length < minLenght) && !validEmail }
                     disabled={ !validPassword || !validEmail }
                     onClick={ this.userLogin }
-                    // onClick={ () => history.push('/carteira') }
                   >
                     Entrar
                   </button>
@@ -90,12 +81,4 @@ class Login extends React.Component {
   }
 }
 
-Login.propTypes = {
-  // history: propTypes.shape({
-  //   push: propTypes.func.isRequired,
-  // }).isRequired,
-  dispatch: propTypes.func.isRequired,
-  history: propTypes.func.isRequired,
-};
-
-export default connect()(Login);
+export default Login;
