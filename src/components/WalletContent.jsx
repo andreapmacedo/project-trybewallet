@@ -36,7 +36,7 @@ class WalletContent extends React.Component {
         value * exchangeRates[currency].ask
       ))
       .reduce((acc, curr) => acc + curr);
-    return total.toFixed(2);
+    return total;
   };
 
   submit = () => {

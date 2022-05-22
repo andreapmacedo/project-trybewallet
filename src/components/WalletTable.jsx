@@ -7,16 +7,17 @@ function WalletTable(props) {
   const { expenses } = props;
   console.log(expenses);
   function geRows() {
+    const ask = (expense) => Number(expense.exchangeRates[expense.currency].ask);
     return expenses.map((expense, i) => (
       <tr key={ expense.id } className={ i % 2 === 0 ? 'Even' : 'Odd' }>
         <td>{expense.description}</td>
         <td>{expense.tag}</td>
         <td>{expense.method}</td>
-        <td>{expense.value.replace('.', ',')}</td>
-        <td>{expense.currency}</td>
-        <td>{expense.tag}</td>
-        <td>{expense.tag}</td>
-        <td>{expense.tag}</td>
+        <td>{Number(expense.value).toFixed(2)}</td>
+        <td>{expense.exchangeRates[expense.currency].name}</td>
+        <td>{ask(expense).toFixed(2)}</td>
+        <td>{(ask(expense) * Number(expense.value)).toFixed(2)}</td>
+        <td>Real</td>
       </tr>
     ));
   }
