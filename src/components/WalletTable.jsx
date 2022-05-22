@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './WalletTable.css';
 import PropTypes from 'prop-types';
+import TableBtn from './TableBtn';
 
 function WalletTable(props) {
   const { expenses } = props;
@@ -18,6 +19,9 @@ function WalletTable(props) {
         <td>{ask(expense).toFixed(2)}</td>
         <td>{(ask(expense) * Number(expense.value)).toFixed(2)}</td>
         <td>Real</td>
+        {/* <td>
+          <TableBtn />
+        </td> */}
       </tr>
     ));
   }
