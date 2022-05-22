@@ -1,0 +1,16 @@
+.WalletTable table {
+  width: 100%;
+}
+
+.WalletTable th {
+  background-color: #075858;
+  color: white;
+}
+
+.WalletTable .Even {
+  background-color: #ddd;
+}
+
+.WalletTable .Odd {
+  background-color: #ccc;
+}

@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { connect } from 'react-redux';
 // import "./Login.css"
 import Loading from '../components/Loading';
-import { addEmail } from '../actions';
+import addEmail from '../actions/userActions';
 
 class Login extends React.Component {
   constructor() {
@@ -18,7 +18,6 @@ class Login extends React.Component {
   }
 
   validityEmail = (email) => {
-    console.log(email);
     // https://www.horadecodar.com.br/2020/09/13/como-validar-email-com-javascript/
     const response = /\S+@\S+\.\S+/;
     this.setState({ validEmail: response.test(email) });
@@ -32,6 +31,9 @@ class Login extends React.Component {
 
   inputHandleChange = ({ target }) => {
     const { value, name } = target;
+    // console.log('colchete', { [name]: value });
+    // console.log('com objeto', { name: value });
+    // console.log('sem objeto', name, value);
     this.setState({ [name]: value });
     if (name === 'email') this.validityEmail(value);
     if (name === 'password') this.validitypassword(value);
