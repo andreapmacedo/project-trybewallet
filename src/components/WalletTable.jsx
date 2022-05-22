@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './WalletTable.css';
 import PropTypes from 'prop-types';
-import TableBtn from './TableBtn';
+// import TableBtn from './TableBtn';
 
 function WalletTable(props) {
   const { expenses } = props;
