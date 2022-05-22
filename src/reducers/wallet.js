@@ -40,11 +40,11 @@ const walletRecuder = (state = INITIAL_STATE, action) => {
       ...state,
       currencies: action.payload,
     };
-  // case 'REMOVE_EXPENSE':
-  //   return {
-  //     ...state,
-  //     expenses: [...state.expenses.filter((expense) => expense !== action.payload)],
-  //   };
+  case 'REMOVE_EXPENSE':
+    return {
+      ...state,
+      expenses: [...state.expenses.filter((expense) => expense !== action.payload)],
+    };
   // case 'EDIT_EXPENSE':
   //   return { ...state, expenses: action.payload };
   default:

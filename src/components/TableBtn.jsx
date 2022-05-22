@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TableBtn = (props) => {
-  const { name, id, myFunction } = props;
+  const { name, id, command } = props;
   return (
     <button
       type="button"
       data-testid={ id }
-      onClick={ myFunction() }
+      onClick={ command }
     >
       { name }
     </button>
@@ -17,7 +17,7 @@ const TableBtn = (props) => {
 TableBtn.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  myFunction: PropTypes.func.isRequired,
+  command: PropTypes.func.isRequired,
 };
 
 export default TableBtn;
