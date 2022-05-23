@@ -3,14 +3,25 @@ import { connect } from 'react-redux';
 import './WalletTable.css';
 import PropTypes from 'prop-types';
 import TableBtn from './TableBtn';
-import { removeExpense } from '../actions/walletActions';
+import { removeExpense, editExpense } from '../actions/walletActions';
 
 function WalletTable(props) {
   const { expenses } = props;
-  // console.log(expenses);
 
-  const editExpense = (selectedExpense, index) => {
+  const modifyExpense = (selectedExpense, index) => {
+  //   const { value, description, currency, method, tag } = props;
+  //   const { changeExpense } = props;
     console.log(selectedExpense, index);
+  //   const editedExpense = {
+  //     id: selectedExpense.id,
+  //     value,
+  //     description,
+  //     currency,
+  //     method,
+  //     tag,
+  //   };
+    // console.log(editedExpense.value);
+    // changeExpense(editedExpense, index, expenses);
   };
 
   function geRows() {
@@ -27,11 +38,13 @@ function WalletTable(props) {
         <td>Real</td>
         <td>
           <TableBtn
+            color="#1499d3"
             name="Editar"
             id="edit-btn"
-            command={ () => editExpense(expense, expense.id) }
+            command={ () => modifyExpense(expense, expense.id) }
           />
           <TableBtn
+            color="#FF432E"
             name="Excluir"
             id="delete-btn"
             command={ () => props.deleteExpense(expense) }
@@ -73,6 +86,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   deleteExpense: (expense) => {
     dispatch(removeExpense(expense));
+  },
+  changeExpense: (expense, id, expenses) => {
+    dispatch(editExpense(expense, id, expenses));
   },
 });
 

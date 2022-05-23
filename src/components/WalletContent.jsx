@@ -48,6 +48,22 @@ class WalletContent extends React.Component {
     this.setState(INITIAL_STATE);
   }
 
+  // const modifyExpense = (selectedExpense, index) => {
+  //   const { value, description, currency, method, tag } = props;
+  //   const { changeExpense } = props;
+  //   console.log(selectedExpense, index);
+  //   const editedExpense = {
+  //     id: selectedExpense.id,
+  //     value,
+  //     description,
+  //     currency,
+  //     method,
+  //     tag,
+  //   };
+  //   console.log(editedExpense.value);
+  //   changeExpense(editedExpense, index, expenses);
+  // };
+
   render() {
     const { currencies, email } = this.props;
     const { value, description, currency, method, tag } = this.state;

@@ -45,8 +45,8 @@ const walletRecuder = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: [...state.expenses.filter((expense) => expense !== action.payload)],
     };
-  // case 'EDIT_EXPENSE':
-  //   return { ...state, expenses: action.payload };
+  case 'EDIT_EXPENSE':
+    return { ...state, expenses: action.payload };
   default:
     return state;
   }
