@@ -1,0 +1,86 @@
+.header {
+  align-items: center;
+  background-color: rgb(46, 193, 140);
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header-left {
+  align-items: center;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: start;
+  padding-left: 25px;
+  width: 30vw;
+}
+
+.header-right {
+  align-items: center;
+  color: aliceblue;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 25px;
+  width: 70vw;
+}
+
+.total-field {
+  display: flex;
+  padding-left: 25px;
+}
+
+.total-field p {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.form-content {
+  align-items: center;
+  background-color: rgb(100, 100, 100);
+  box-shadow: 0 3px 10px rgb(200, 200, 200);
+  color: white;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-around;
+  margin: 10px 0;
+  padding: 15px;
+  text-align: center;
+  width: 100vw;
+}
+
+.form-input {
+  border: 1px solid rgb(1, 0, 0);
+  border-radius: 7px;
+  height: 25px;
+  margin-left: 5px;
+  outline: none;
+  text-align: center;
+  width: 150px;
+}
+
+.value {
+  width: 72px;
+}
+
+.description {
+  width: 200px;
+}
+
+.add-expense-btn {
+  background-color: rgb(0, 150, 0);
+  border: none;
+  border-radius: 7px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  height: 30px;
+  outline: none;
+  padding: 0 15px;
+  transition: 0.2s;
+}
+
+.add-expense-btn:hover {
+  background-color: rgb(0, 130, 0);
+  transition: 0.2s;
+}

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrencies, setExpense } from '../actions/walletActions';
 import WalletTable from './WalletTable';
+import './WalletContent.css';
 
 const INITIAL_STATE = {
   value: '',
@@ -69,19 +70,23 @@ class WalletContent extends React.Component {
     const { value, description, currency, method, tag } = this.state;
     return (
       <>
-        <header className="main-header">
-          <div>
-            <span>
-              <h3 data-testid="email-field">{`Email: ${email}`}</h3>
+        <header className="header">
+          <div className="header-left">
+            Trybewallet
+          </div>
+          <div className="header-right">
+            <p data-testid="email-field">{`Email: ${email}`}</p>
+            <section className="total-field">
               <p data-testid="total-field">{ this.balance() }</p>
               <p data-testid="header-currency-field">BRL</p>
-            </span>
+            </section>
           </div>
         </header>
-        <form>
+        <form className="form-content">
           <label htmlFor="value">
             Valor:
             <input
+              className="form-input value"
               data-testid="value-input"
               id="value"
               name="value"
@@ -93,6 +98,7 @@ class WalletContent extends React.Component {
           <label htmlFor="description">
             Descrição:
             <input
+              className="form-input description"
               data-testid="description-input"
               id="description"
               name="description"
@@ -104,6 +110,7 @@ class WalletContent extends React.Component {
           <label htmlFor="currency">
             Moeda:
             <select
+              className="form-input"
               data-testid="currency-input"
               id="currency"
               name="currency"
@@ -123,6 +130,7 @@ class WalletContent extends React.Component {
           <label htmlFor="paymentMethod">
             Método de Pagamento:
             <select
+              className="form-input"
               data-testid="method-input"
               id="paymentMethod"
               name="method"
@@ -137,6 +145,7 @@ class WalletContent extends React.Component {
           <label htmlFor="category">
             Categoria:
             <select
+              className="form-input"
               data-testid="tag-input"
               id="category"
               name="tag"
@@ -151,6 +160,7 @@ class WalletContent extends React.Component {
             </select>
           </label>
           <button
+            className="add-expense-btn"
             type="button"
             // disabled={  }
             onClick={ this.submit }
